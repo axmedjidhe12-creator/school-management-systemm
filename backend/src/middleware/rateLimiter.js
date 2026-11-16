@@ -14,13 +14,14 @@ const apiLimiter = rateLimit({
 
 // Stricter Rate Limiter for Login/Authentication
 const authLimiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 15, // limit each IP to 15 login attempts per window
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 1000, // relaxed for development and demo testing
   standardHeaders: true,
   legacyHeaders: false,
+  skip: () => process.env.NODE_ENV !== 'production',
   message: {
     success: false,
-    message: 'Too many login attempts, please try again in 10 minutes.'
+    message: 'Too many login attempts, please try again in a moment.'
   }
 });
 

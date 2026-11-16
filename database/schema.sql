@@ -25,6 +25,8 @@ CREATE TABLE `schools` (
   `school_name` VARCHAR(255) NOT NULL,
   `address` VARCHAR(255) DEFAULT NULL,
   `phone` VARCHAR(50) DEFAULT NULL,
+  `theme_color` VARCHAR(50) DEFAULT '#2563eb',
+  `motto` VARCHAR(255) DEFAULT 'Excellence in Education',
   `logo_url` LONGTEXT DEFAULT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
